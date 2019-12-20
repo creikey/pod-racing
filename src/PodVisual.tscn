@@ -1,7 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://PodVisual.gd" type="Script" id=1]
 
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.579634, 1 )
+colors = PoolColorArray( 0.419608, 0.807843, 0.223529, 1, 1, 0.623529, 0.109804, 1, 0.905882, 0.113725, 0.211765, 1 )
+
 [node name="PodVisual" type="Node2D"]
 script = ExtResource( 1 )
+color = Color( 0.00392157, 0.0862745, 0.152941, 1 )
+maximum_target_length = 150.0
+target_line_length_gradient = SubResource( 1 )
 radius = 30.0
