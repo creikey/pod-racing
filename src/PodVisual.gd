@@ -1,6 +1,7 @@
 tool
 extends Node2D
 
+export var show_line: bool = true
 export var color = Color()
 export var maximum_target_length = 200.0
 export var target_line_length_gradient: Gradient = Gradient.new()
@@ -12,7 +13,7 @@ func _process(delta):
 	update()
 
 func _draw():
-	var tension_amount: float = target_offset.length()/maximum_target_length
-	print(tension_amount)
-	draw_line(Vector2(), target_offset, target_line_length_gradient.interpolate(min(1.0, tension_amount)), target_line_width, true)
+	if show_line:
+		var tension_amount: float = target_offset.length()/maximum_target_length
+		draw_line(Vector2(), target_offset, target_line_length_gradient.interpolate(min(1.0, tension_amount)), target_line_width, true)
 	draw_circle(Vector2(), radius, color)
